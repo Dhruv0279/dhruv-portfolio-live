@@ -8,11 +8,13 @@
 </head>
 <body>
 
-    <nav style="padding: 1.5rem; position: fixed; top: 0; width: 100%; z-index: 100;" class="glass">
-        <div class="container nav-container">
-            <a href="../index.html" style="color: var(--primary-color); text-decoration: none; font-weight: 700; font-size: 1.2rem;">&larr; DHRUV SHARMA</a>
-            <a href="../index.html#portfolio" class="glass-btn" style="padding: 0.5rem 1rem;">Back to Portfolio</a>
+    <!-- Global Navigation -->
+    <nav class="global-nav">
+        <a href="../index.html" class="nav-brand">DHRUV<span>SEO</span></a>
+        <div class="nav-links">
+            <a href="../index.html#portfolio">More Case Studies</a>
         </div>
+        <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dhruvsharma0279'});return false;" class="nav-cta">Get My Free SEO Audit</a>
     </nav>
 
     <header class="hero" style="min-height: 60vh; text-align: center;">
@@ -188,5 +190,9 @@
     </footer>
 
     <script src="../app.js"></script>
+
+    <!-- Calendly popup dependencies -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>

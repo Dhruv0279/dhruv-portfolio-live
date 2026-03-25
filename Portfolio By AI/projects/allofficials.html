@@ -8,11 +8,13 @@
 </head>
 <body>
 
-    <nav style="padding: 1.5rem; position: fixed; top: 0; width: 100%; z-index: 100;" class="glass">
-        <div class="container nav-container">
-            <a href="../index.html" style="color: var(--primary-color); text-decoration: none; font-weight: 700; font-size: 1.2rem;">&larr; DHRUV SHARMA</a>
-            <a href="../index.html#portfolio" class="glass-btn" style="padding: 0.5rem 1rem;">Back to Portfolio</a>
+    <!-- Global Navigation -->
+    <nav class="global-nav">
+        <a href="../index.html" class="nav-brand">DHRUV<span>SEO</span></a>
+        <div class="nav-links">
+            <a href="../index.html#portfolio">More Case Studies</a>
         </div>
+        <a href="javascript:void(0)" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dhruvsharma0279'});return false;" class="nav-cta">Get My Free SEO Audit</a>
     </nav>
 
     <header class="hero" style="min-height: 50vh; text-align: center; padding-top: 150px;">
@@ -172,7 +174,6 @@
                 <!-- Images for GA4 -->
                 <div style="margin-top: 2.5rem; display: flex; flex-direction: column; gap: 2rem; width: 100%; max-width: 900px; margin-inline: auto;">
                     <img src="../assets/allofficials-ga4-1.png" class="clickable-image" alt="Allofficials GA4 Organic Search" style="width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                    <img src="../assets/allofficials-ga4-2.png" class="clickable-image" alt="Allofficials GA4 Channels" style="width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
                 </div>
             </div>
 
@@ -294,5 +295,9 @@
     </footer>
 
     <script src="../app.js"></script>
+
+    <!-- Calendly popup dependencies -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
