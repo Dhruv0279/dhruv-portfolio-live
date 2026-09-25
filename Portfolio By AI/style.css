@@ -660,3 +660,100 @@ body {
     border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
+
+/* -----------------------
+   Contact & Footer Styles
+------------------------ */
+.contact-channel-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 10px 30px rgba(46, 204, 113, 0.15);
+    background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.email-pill-link:hover {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    background: rgba(46, 204, 113, 0.1) !important;
+    transform: translateY(-2px);
+}
+
+.site-footer {
+    padding: 4rem 0 2.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 10, 10, 0.95);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-brand p {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-heading {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    font-weight: 600;
+}
+
+.footer-email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.footer-email-link svg {
+    color: var(--primary-color);
+}
+
+.footer-email-link:hover {
+    color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-dim);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .footer-contact {
+        align-items: center;
+    }
+}
+
