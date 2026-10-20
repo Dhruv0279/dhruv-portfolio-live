@@ -25,6 +25,18 @@ body {
     overflow-x: hidden;
 }
 
+/* Responsive Image Reset - Prevents vertical stretching and aspect ratio compression */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+picture {
+    display: block;
+    width: 100%;
+}
+
 /* Glassmorphism Utility */
 .glass {
     background: var(--card-bg);
@@ -421,11 +433,107 @@ section {
 }
 .clickable-image {
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    display: block;
+    aspect-ratio: auto;
+    object-fit: contain;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
 }
 .clickable-image:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transform: scale(1.015);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(46, 204, 113, 0.2);
+}
+
+/* ----------------------------------------------------
+   Showcase Proof Cards for In-Content Proof Screenshots
+----------------------------------------------------- */
+.content-proof-card {
+    position: relative;
+    width: 100%;
+    max-width: 1040px;
+    margin: 2.25rem auto;
+    background: rgba(18, 18, 18, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(46, 204, 113, 0.06);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-proof-card:hover {
+    border-color: rgba(46, 204, 113, 0.45);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.8), 0 0 30px rgba(46, 204, 113, 0.18);
+    transform: translateY(-2px);
+}
+
+.content-proof-img-wrap {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #0d0d0d;
+}
+
+.content-proof-img-wrap img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    aspect-ratio: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-proof-img-wrap:hover img {
+    transform: scale(1.012);
+}
+
+.content-proof-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    pointer-events: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.25s ease;
+    z-index: 5;
+}
+
+.content-proof-card:hover .content-proof-badge {
+    background: rgba(46, 204, 113, 0.95);
+    color: #000;
+    border-color: var(--primary-color);
+}
+
+.content-proof-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0.85rem 1rem 0.35rem 1rem;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.content-proof-caption svg {
+    color: var(--primary-color);
+    flex-shrink: 0;
 }
 
 /* -----------------------
@@ -756,4 +864,510 @@ body {
         align-items: center;
     }
 }
+
+/* ----------------------------------------------------
+   Case Study Layout & First-Screen Proof System
+---------------------------------------------------- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 135px;
+}
+
+section[id] {
+    scroll-margin-top: 135px;
+}
+
+.case-hero {
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    background: radial-gradient(circle at 80% 20%, rgba(46, 204, 113, 0.08), transparent 45%);
+    display: block;
+}
+
+.hero-proof-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.hero-text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.hero-client-logo {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #151515;
+    padding: 6px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    margin-bottom: 1rem;
+}
+
+.hero-text-col h1 {
+    font-size: clamp(2rem, 3.2vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.hero-summary {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.hero-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.hero-proof-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary-color);
+    color: #000 !important;
+    font-weight: 700;
+    padding: 0.75rem 1.6rem;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.hero-proof-btn:hover {
+    box-shadow: 0 0 25px rgba(46, 204, 113, 0.5);
+    transform: translateY(-2px);
+}
+
+.hero-proof-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-proof-card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(46, 204, 113, 0.35);
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(46, 204, 113, 0.12);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.hero-proof-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 35px rgba(46, 204, 113, 0.25);
+    transform: translateY(-3px);
+}
+
+.hero-proof-img-wrap {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #000;
+}
+
+.hero-proof-img-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.hero-proof-img-wrap:hover img {
+    transform: scale(1.02);
+}
+
+.proof-zoom-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    pointer-events: none;
+}
+
+.hero-proof-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0.65rem 0.5rem 0.2rem 0.5rem;
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.hero-proof-caption svg {
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+/* Stats card compact padding in hero */
+.case-hero .stats-grid {
+    margin-top: 1.25rem;
+    gap: 1.25rem;
+}
+
+.case-hero .stat-card {
+    padding: 1.25rem 1rem;
+}
+
+.case-hero .stat-number {
+    font-size: 2.4rem;
+}
+
+.case-hero .stat-label {
+    font-size: 0.82rem;
+}
+
+/* Sticky Jump-Link Navigation Bar */
+.sticky-nav-bar {
+    position: sticky;
+    top: 68px;
+    z-index: 850;
+    background: rgba(13, 13, 13, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.65rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+}
+
+.sticky-nav-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.85rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 2px 1rem;
+}
+
+.sticky-nav-inner::-webkit-scrollbar {
+    display: none;
+}
+
+.jump-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.55rem 1.35rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    text-decoration: none;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.jump-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.jump-link.active {
+    color: #000;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.4);
+    font-weight: 700;
+}
+
+/* Proof Strip Section */
+.proof-strip-section {
+    padding: 2rem 0 3.5rem 0;
+}
+
+.proof-strip-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.25rem;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    font-weight: 600;
+}
+
+.verified-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--primary-color);
+    display: inline-block;
+}
+
+.proof-strip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.proof-strip-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.proof-strip-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(46, 204, 113, 0.15);
+}
+
+.proof-thumb-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+}
+
+.proof-thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.proof-strip-card:hover .proof-thumb-wrap img {
+    transform: scale(1.05);
+}
+
+.proof-card-footer {
+    padding: 0.85rem 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.proof-card-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0.5rem;
+}
+
+.proof-card-badge {
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+/* Lightbox Enhancements */
+.lightbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 92%;
+    max-height: 92vh;
+}
+
+.lightbox-caption {
+    margin-top: 14px;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 900px;
+}
+
+/* Responsive Overrides for Case Studies */
+@media (max-width: 992px) {
+    .hero-proof-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.25rem;
+    }
+    .hero-text-col {
+        display: contents;
+    }
+    .hero-client-logo {
+        order: 1;
+        width: 68px;
+        height: 68px;
+        margin-bottom: 0.5rem;
+    }
+    .hero-text-col h1 {
+        order: 2;
+        font-size: clamp(1.75rem, 5vw, 2.2rem);
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+    .hero-summary {
+        order: 3;
+        font-size: 0.98rem;
+        margin-bottom: 0.75rem;
+        text-align: center;
+        max-width: 600px;
+    }
+    .hero-proof-col {
+        order: 4;
+        width: 100%;
+        max-width: 520px;
+        margin-bottom: 0.75rem;
+    }
+    .hero-cta-group {
+        order: 5;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .case-hero {
+        padding-top: 85px;
+        padding-bottom: 20px;
+    }
+    .sticky-nav-bar {
+        top: 56px;
+        padding: 0.45rem 0;
+    }
+    .sticky-nav-inner {
+        justify-content: flex-start;
+        padding: 0 1rem;
+    }
+    .jump-link {
+        padding: 0.4rem 1rem;
+        font-size: 0.82rem;
+    }
+    .proof-strip-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+        padding-bottom: 0.75rem;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+    .proof-strip-grid::-webkit-scrollbar {
+        display: none;
+    }
+    .proof-strip-card {
+        flex: 0 0 85%;
+        scroll-snap-align: start;
+    }
+    .hero-proof-card {
+        padding: 6px;
+    }
+    .case-hero .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+    .case-hero .stat-card {
+        padding: 1rem 0.75rem;
+    }
+    .case-hero .stat-number {
+        font-size: 2rem;
+    }
+    .content-proof-card {
+        padding: 6px;
+        margin: 1.5rem auto;
+        border-radius: 12px;
+    }
+    .content-proof-badge {
+        font-size: 0.68rem;
+        padding: 3px 8px;
+        top: 8px;
+        right: 8px;
+    }
+    .content-proof-caption {
+        font-size: 0.78rem;
+        padding: 0.6rem 0.5rem 0.2rem 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .global-nav {
+        padding: 0.75rem 4%;
+    }
+    .nav-brand {
+        font-size: 1.15rem;
+    }
+    .nav-cta {
+        padding: 0.45rem 0.85rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    .content-proof-card {
+        padding: 5px;
+        margin: 1.25rem auto;
+    }
+    .content-proof-caption {
+        font-size: 0.75rem;
+    }
+}
+
+
 
