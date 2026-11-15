@@ -1,0 +1,35 @@
+# Grow Accrete
+
+> D2C SEO & GEO Consultant for Shopify Brands, founded by Dhruv Sharma.
+
+Grow Accrete helps direct-to-consumer (D2C) and Shopify brands scale organic revenue from Google and AI search engines like ChatGPT, Google Gemini, Perplexity and Google AI Overviews. Services are tailored for Shopify and e-commerce brands.
+
+## Core Services
+
+- Collection & Category Page SEO: Architecture, keyword mapping, conversion-focused collection copy, filter and faceted URL handling, and internal linking to rank for high-intent shopping queries.
+- Product Page SEO: Title, description and image alt text optimisation, rich snippets (Product, Review, Offer schema), and Merchant Center free listings.
+- Shopify Technical SEO: Eliminating duplicate URL structures, optimising Core Web Vitals and app bloat, crawl and indexation fixes, and multi-market and multi-currency store setups.
+- Content That Sells: High-intent buying guides, "Best X for Y" comparisons, gifting and seasonal landing pages, and topical clusters connected to collections.
+- Reddit & Community Mentions: Category research, authentic brand participation, and citation building where buyers ask for recommendations and LLMs source answers.
+- CRO for Product & Collection Pages: Page-level UX and copy audits, trust signals, CTA placement, and revenue-prioritised test ideas.
+- Generative Engine Optimization (GEO): Comprehensive AI visibility audits, LLM-ready catalogue feed and schema setups, brand citation strategies across ChatGPT, Google Gemini, Claude, Perplexity, Microsoft Copilot and Google AI Mode.
+
+## Key Results
+
+- GGT Foods: +195% organic revenue surge and +125% clicks growth in 6 months for a premium dry fruit brand.
+- AllOfficials: +360% organic traffic surge and 447K+ interactions targeting high-intent e-commerce keywords.
+- Tap Health: +190% organic traffic surge and 14,660+ conversions.
+- BrandPOS: +352% click surge and Top 5 Google rankings.
+- BlockP: +269% click growth and Top 5 international rankings.
+
+## Links & Contact
+
+- Homepage: https://www.growaccrete.com/
+- Case Studies:
+  - GGT Foods: https://www.growaccrete.com/projects/ggtfoods.html
+  - AllOfficials: https://www.growaccrete.com/projects/allofficials.html
+  - Tap Health: https://www.growaccrete.com/projects/taphealth.html
+  - BrandPOS: https://www.growaccrete.com/projects/brandpos.html
+  - BlockP: https://www.growaccrete.com/projects/blockp.html
+- Free Audit & Strategy Call: https://calendly.com/dhruvsharma0279
+- Direct Email: dhruv@growaccrete.com
